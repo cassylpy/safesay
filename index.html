@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>個管師互動平台指引</title>
     <style>
-        :root { --primary-blue: #007AFF; --success-green: #34C759; --danger-red: #FF3B30; --bg-gray: #F2F2F7; }
+        :root { --primary-blue: #007AFF; --success-green: #34C759; --danger-red: #FF3B30; --bg-gray: #F2F2F7; --text-dark: #1c1c1e; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-gray); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         
         /* 頂部橫幅 */
         .header { background: white; width: 100%; padding: 25px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-bottom: 2px solid #ddd; }
-        .header h1 { margin: 0; font-size: 26px; color: #1c1c1e; }
+        .header h1 { margin: 0; font-size: 26px; color: var(--text-dark); }
         .header p { margin: 10px 0 0; font-size: 16px; color: #8e8e93; padding: 0 20px; }
 
         .content { width: 90%; max-width: 450px; padding: 20px 0; }
@@ -18,21 +18,46 @@
         /* 卡片設計 */
         .card { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .step-num { display: inline-block; background: var(--primary-blue); color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: bold; margin-right: 10px; }
-        .step-title { font-size: 22px; font-weight: bold; color: #1c1c1e; vertical-align: middle; }
+        .step-title { font-size: 22px; font-weight: bold; color: var(--text-dark); vertical-align: middle; }
 
-        /* 按鈕設計 */
-        .btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 22px; margin: 15px 0; border-radius: 12px; font-size: 22px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; box-sizing: border-box; }
-        .btn:active { opacity: 0.7; }
+        /* 通用按鈕樣式 */
+        .btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 18px; margin: 12px 0; border-radius: 12px; font-size: 20px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; transition: transform 0.1s; box-sizing: border-box; text-align: center; }
+        .btn:active { transform: scale(0.98); opacity: 0.9; }
         
+        /* 下載按鈕 */
         .btn-ios { background-color: #000; color: white; }
         .btn-android { background-color: var(--success-green); color: white; }
-        .btn-main { background-color: var(--danger-red); color: white; border: 4px solid #b22a22; font-size: 26px; height: 80px; }
+
+        /* 分流按鈕設計 - 已更新底色 */
+        .split-section { margin-top: 15px; }
+        
+        /* 泌尿道癌：深藍色底 */
+        .btn-uro { 
+            background-color: #0056b3; 
+            color: white; 
+            box-shadow: 0 4px 0 #004494; /* 增加立體感 */
+            font-size: 22px;
+            padding: 20px;
+        }
+        
+        /* 食道癌：暖橘色底 */
+        .btn-eso { 
+            background-color: #d35400; 
+            color: white; 
+            box-shadow: 0 4px 0 #a04000; /* 增加立體感 */
+            font-size: 22px;
+            padding: 20px;
+        }
+        
+        /* 增加按鈕內的圖示感 */
+        .btn-icon { margin-right: 8px; font-size: 28px; vertical-align: bottom;}
 
         /* 說明文字 */
         .instruction { font-size: 18px; color: #3a3a3c; line-height: 1.6; margin: 10px 0; }
+        .sub-instruction { font-size: 15px; color: #666; text-align: center; margin-top: -5px; margin-bottom: 15px; }
         .highlight { color: var(--danger-red); font-weight: bold; }
 
-        .footer { text-align: center; font-size: 14px; color: #aeaeb2; margin-bottom: 40px; }
+        .footer { text-align: center; font-size: 14px; color: #aeaeb2; margin-bottom: 40px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -44,32 +69,48 @@
 
 <div class="content">
     
+    <!-- 第一步：下載 -->
     <div class="card">
-        <span class="step-num">1</span><span class="step-title">安裝 SafeSay</span>
-        <p class="instruction">請點擊下方按鈕下載 APP：</p>
-        <a href="https://apps.apple.com/tw/app/safesay/id6443932779" class="btn btn-ios">🍎 蘋果手機(iPhone)</a>
-        <a href="https://play.google.com/store/apps/details?id=com.every8d.talkod_frontend" class="btn btn-android">🤖 安卓手機(Samsung等)</a>
+        <span class="step-num">1</span><span class="step-title">安裝 APP</span>
+        <p class="instruction">請先下載「SafeSay」應用程式：</p>
+        <a href="https://apps.apple.com/tw/app/safesay/id6443932779" class="btn btn-ios">🍎 蘋果手機 (iPhone)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.every8d.talkod_frontend" class="btn btn-android">🤖 安卓手機 (Samsung等)</a>
+        <p class="sub-instruction">※ 若已安裝，請直接看下一步</p>
     </div>
 
+    <!-- 第二步：分流連線 -->
     <div class="card" style="border: 2px solid var(--danger-red);">
-        <span class="step-num" style="background:var(--danger-red)">2</span><span class="step-title">連結個管師</span>
-        <p class="instruction">安裝好後，請點擊下方連結進行「報到」：</p>
-        <a href="https://safesay.tw/_iHA9Ha" class="btn btn-main">👉 點此立即連線</a>
-        <p class="instruction" style="text-align:center; font-size:16px;">(點擊後會自動打開 APP)</p>
+        <span class="step-num" style="background:var(--danger-red)">2</span><span class="step-title">選擇您的疾病別</span>
+        <p class="instruction">安裝後，請<b style="color:var(--danger-red)">點選下方符合您的按鈕</b>，系統將自動為您連線：</p>
+        
+        <div class="split-section">
+            <!-- 泌尿道癌連結 -->
+            <a href="https://safesay.tw/_iHA9Ha" class="btn btn-uro">
+                我是 泌尿道癌 病友
+            </a>
+            
+            <!-- 食道癌連結 -->
+            <a href="https://safesay.tw/_4OixNO" class="btn btn-eso">
+                我是 食道癌 病友
+            </a>
+        </div>
+        
+        <p class="sub-instruction">(點擊後會自動打開 APP)</p>
     </div>
 
+    <!-- 第三步：驗證 -->
     <div class="card">
         <span class="step-num">3</span><span class="step-title">身分驗證</span>
-        <p class="instruction">進入後請留言：<br>
+        <p class="instruction">進入後請留言傳送：<br>
         <span class="highlight">「您的姓名、癌別、病歷號」</span><br>
         看到我的回應，就表示成功囉！</p>
     </div>
 
     <div class="footer">
-        基隆長庚醫院 癌症個案管理師-林佩諭 關心您
+        基隆長庚醫院 癌症個案管理小組<br>
+        關心您的健康
     </div>
 </div>
 
 </body>
-
 </html>
