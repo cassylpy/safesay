@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>掛號與看診進度查詢</title>
+    <style>
+        :root { --cgmh-orange: #F37021; --primary-blue: #007AFF; --success-green: #34C759; --bg-gray: #F2F2F7; --text-dark: #1c1c1e; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-gray); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* 頂部橫幅 */
+        .header { background: white; width: 100%; padding: 25px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-bottom: 2px solid #ddd; }
+        .header h1 { margin: 0; font-size: 24px; color: var(--text-dark); }
+        .header p { margin: 8px 0 0; font-size: 15px; color: #8e8e93; }
+
+        .content { width: 90%; max-width: 450px; padding: 20px 0; }
+
+        /* 卡片設計 */
+        .card { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card-title { font-size: 20px; font-weight: bold; color: var(--text-dark); margin-bottom: 15px; border-left: 5px solid var(--cgmh-orange); padding-left: 10px; display: block;}
+
+        /* 按鈕樣式 */
+        .btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 18px; margin: 10px 0; border-radius: 12px; font-size: 20px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; box-sizing: border-box; text-align: center; }
+        .btn:active { opacity: 0.8; }
+
+        /* 網路掛號主按鈕 */
+        .btn-reg { 
+            background-color: var(--cgmh-orange); 
+            color: white; 
+            font-size: 24px; 
+            padding: 25px;
+            box-shadow: 0 4px 0 #cf5d1b;
+        }
+
+        /* APP 下載按鈕 */
+        .btn-ios { background-color: #000; color: white; font-size: 18px; }
+        .btn-android { background-color: var(--success-green); color: white; font-size: 18px; }
+        
+        /* 手冊按鈕 */
+        .btn-manual { 
+            background-color: white; 
+            color: #555; 
+            border: 2px solid #ccc; 
+            font-size: 18px;
+        }
+
+        /* 聯絡資訊區塊 */
+        .contact-info { background: #eef5ff; padding: 15px; border-radius: 10px; color: #444; font-size: 16px; line-height: 1.8; }
+        .contact-icon { margin-right: 5px; }
+
+        .footer { text-align: center; font-size: 13px; color: #aeaeb2; margin-bottom: 40px; margin-top: 10px;}
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📅 門診掛號與進度</h1>
+    <p>基隆長庚醫院 個案管理服務</p>
+</div>
+
+<div class="content">
+    
+    <!-- 第一區：直接網路掛號 -->
+    <div class="card">
+        <span class="card-title">快速連結</span>
+        <p style="margin:0 0 10px 0; color:#666;">若您只需要查詢時間或掛號，請點此：</p>
+        <a href="https://register.cgmh.org.tw/Department/2" target="_blank" class="btn btn-reg">
+            🏥 前往 網路掛號系統
+        </a>
+    </div>
+
+    <!-- 第二區：APP 下載 -->
+    <div class="card">
+        <span class="card-title">📱 長庚 e 指通 APP</span>
+        <p style="margin:0 0 10px 0; color:#666; font-size:15px;">下載 APP 可即時查詢看診進度、掛號與領藥動態：</p>
+        
+        <a href="https://apps.apple.com/tw/app/長庚e指通服務/id619682038" target="_blank" class="btn btn-ios">
+            🍎 蘋果手機 (iOS) 下載
+        </a>
+        
+        <a href="https://play.google.com/store/apps/details?id=tw.org.cgmh.phonereg" target="_blank" class="btn btn-android">
+            🤖 安卓手機 (Android) 下載
+        </a>
+
+        <!-- 手冊連結 (已修正為原始 PDF 網址) -->
+        <a href="https://webapp.cgmh.org.tw/data/news_attch/202309120016-1.pdf" target="_blank" class="btn btn-manual">
+            📖 點此查看 APP 使用手冊
+        </a>
+    </div>
+
+    <!-- 第三區：聯繫資訊 -->
+    <div class="card">
+        <span class="card-title">📞 個管師協助</span>
+        <div class="contact-info">
+            <div style="margin-bottom: 5px;">若您操作有困難，可於上班時間來電，我將協助您約診：</div>
+            <div><span class="contact-icon">📱</span>公務手機：<a href="tel:0975361081" style="color:#007AFF; text-decoration:none;">0975-361081</a></div>
+            <div><span class="contact-icon">☎️</span>院內分機：(02)2432-9292 轉 2355</div>
+            <div style="font-size:14px; color:#888; margin-top:5px;">(週一至週五 08:00-17:00)</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        長庚醫療財團法人<br>
+        個案管理照護團隊
+    </div>
+</div>
+
+</body>
+</html>
