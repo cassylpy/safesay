@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>個管師互動平台指引</title>
+    <style>
+        :root { --primary-blue: #007AFF; --success-green: #34C759; --danger-red: #FF3B30; --bg-gray: #F2F2F7; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-gray); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* 頂部橫幅 */
+        .header { background: white; width: 100%; padding: 25px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-bottom: 2px solid #ddd; }
+        .header h1 { margin: 0; font-size: 26px; color: #1c1c1e; }
+        .header p { margin: 10px 0 0; font-size: 16px; color: #8e8e93; padding: 0 20px; }
+
+        .content { width: 90%; max-width: 450px; padding: 20px 0; }
+
+        /* 卡片設計 */
+        .card { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .step-num { display: inline-block; background: var(--primary-blue); color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-weight: bold; margin-right: 10px; }
+        .step-title { font-size: 22px; font-weight: bold; color: #1c1c1e; vertical-align: middle; }
+
+        /* 按鈕設計 */
+        .btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 22px; margin: 15px 0; border-radius: 12px; font-size: 22px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; box-sizing: border-box; }
+        .btn:active { opacity: 0.7; }
+        
+        .btn-ios { background-color: #000; color: white; }
+        .btn-android { background-color: var(--success-green); color: white; }
+        .btn-main { background-color: var(--danger-red); color: white; border: 4px solid #b22a22; font-size: 26px; height: 80px; }
+
+        /* 說明文字 */
+        .instruction { font-size: 18px; color: #3a3a3c; line-height: 1.6; margin: 10px 0; }
+        .highlight { color: var(--danger-red); font-weight: bold; }
+
+        .footer { text-align: center; font-size: 14px; color: #aeaeb2; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🏥 醫療諮詢平台移轉</h1>
+    <p>為了確保您的資訊安全，請依照以下步驟連線您的個案管理師</p>
+</div>
+
+<div class="content">
+    
+    <div class="card">
+        <span class="step-num">1</span><span class="step-title">安裝 SafeSay</span>
+        <p class="instruction">請點擊下方按鈕下載 APP：</p>
+        <a href="https://apps.apple.com/tw/app/safesay/id6443932779" class="btn btn-ios">🍎 蘋果手機(iPhone)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.every8d.talkod_frontend" class="btn btn-android">🤖 安卓手機(Samsung等)</a>
+    </div>
+
+    <div class="card" style="border: 2px solid var(--danger-red);">
+        <span class="step-num" style="background:var(--danger-red)">2</span><span class="step-title">連結個管師</span>
+        <p class="instruction">安裝好後，請點擊下方連結進行「報到」：</p>
+        <a href="https://safesay.tw/_iHA9Ha" class="btn btn-main">👉 點此立即連線</a>
+        <p class="instruction" style="text-align:center; font-size:16px;">(點擊後會自動打開 APP)</p>
+    </div>
+
+    <div class="card">
+        <span class="step-num">3</span><span class="step-title">身分驗證</span>
+        <p class="instruction">進入後請留言：<br>
+        <span class="highlight">「您的姓名、癌別、病歷號」</span><br>
+        看到我的回應，就表示成功囉！</p>
+    </div>
+
+    <div class="footer">
+        基隆長庚醫院 癌症個案管理師-林佩諭 關心您
+    </div>
+</div>
+
+</body>
+</html>
