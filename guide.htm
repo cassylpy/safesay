@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>就醫與交通指南</title>
+    <style>
+        :root { --cgmh-orange: #F37021; --primary-blue: #007AFF; --google-map-blue: #4285F4; --bg-gray: #F2F2F7; --text-dark: #1c1c1e; --danger-red: #FF3B30; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-gray); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* 頂部橫幅 */
+        .header { background: white; width: 100%; padding: 25px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-bottom: 2px solid #ddd; }
+        .header h1 { margin: 0; font-size: 24px; color: var(--text-dark); }
+        .header p { margin: 8px 0 0; font-size: 15px; color: #8e8e93; }
+
+        .content { width: 90%; max-width: 450px; padding: 20px 0; }
+
+        /* 卡片設計 */
+        .card { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card-title { font-size: 20px; font-weight: bold; color: var(--text-dark); margin-bottom: 15px; border-left: 5px solid var(--cgmh-orange); padding-left: 10px; display: block;}
+
+        /* 文字資訊 */
+        .info-text { font-size: 16px; color: #333; margin-bottom: 8px; line-height: 1.5; }
+        .address { font-size: 15px; color: #666; display: block; margin-bottom: 10px; }
+
+        /* 按鈕樣式 */
+        .btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 16px; margin: 8px 0; border-radius: 12px; font-size: 18px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; box-sizing: border-box; text-align: center; }
+        .btn:active { opacity: 0.8; }
+
+        /* 地圖按鈕 */
+        .btn-map { background-color: var(--google-map-blue); color: white; }
+        
+        /* 一般功能按鈕 */
+        .btn-normal { background-color: white; color: #333; border: 2px solid #ddd; }
+        
+        /* 交通按鈕 */
+        .btn-transport { background-color: #EBF5FF; color: #007AFF; border: 1px solid #007AFF; }
+
+        /* 警示文字 */
+        .alert-text { color: var(--danger-red); font-weight: bold; font-size: 14px; background: #fff0f0; padding: 5px; border-radius: 5px; display: inline-block; margin-top: 5px;}
+
+        .footer { text-align: center; font-size: 13px; color: #aeaeb2; margin-bottom: 40px; margin-top: 10px;}
+        
+        /* 分隔線 */
+        .divider { border-top: 1px solid #eee; margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🏥 就醫與交通指南</h1>
+    <p>基隆長庚醫院 貼心服務</p>
+</div>
+
+<div class="content">
+    
+    <!-- 第一區：院區位置 -->
+    <div class="card">
+        <span class="card-title">📍 院區導航</span>
+        
+        <!-- 基隆院區 -->
+        <div class="info-text"><b>1. 基隆長庚紀念醫院 (本院)</b></div>
+        <span class="address">🏠 基隆市安樂區麥金路222號</span>
+        <a href="https://maps.app.goo.gl/KcKa89bpVN3sEuZe9" target="_blank" class="btn btn-map">
+            🗺️ Google 地圖導航
+        </a>
+
+        <div class="divider"></div>
+
+        <!-- 情人湖院區 -->
+        <div class="info-text"><b>2. 情人湖院區</b></div>
+        <span class="address">🏠 基隆市安樂區基金一路208巷200號</span>
+        <a href="https://maps.app.goo.gl/mh3yz9bhfoerHukx8" target="_blank" class="btn btn-map">
+            🗺️ Google 地圖導航
+        </a>
+    </div>
+
+    <!-- 第二區：交通資訊 -->
+    <div class="card">
+        <span class="card-title">🚌 交通接駁</span>
+        <a href="https://cghdpt.cgmh.org.tw/branch/kel/about/ride" target="_blank" class="btn btn-transport">
+            🚍 乘車及接駁車時刻表
+        </a>
+        <a href="https://cghdpt.cgmh.org.tw/branch/kel/about/park" target="_blank" class="btn btn-transport">
+            🅿️ 停車資訊
+        </a>
+    </div>
+
+    <!-- 第三區：就醫指南 -->
+    <div class="card">
+        <span class="card-title">🏥 就醫指南</span>
+        
+        <a href="https://www.cgmh.org.tw/tw/Guide/Info/1" target="_blank" class="btn btn-normal">
+            📅 門診掛號與進度
+        </a>
+        
+        <a href="https://www.cgmh.org.tw/tw/Guide/Info/2" target="_blank" class="btn btn-normal">
+            🚑 急診須知
+            <br><span style="font-size:14px; color:#d9534f;">(⚠️僅基隆本院區提供)</span>
+        </a>
+
+        <a href="https://www.cgmh.org.tw/tw/Guide/Info/3" target="_blank" class="btn btn-normal">
+            🛏️ 住院須知
+        </a>
+    </div>
+
+    <!-- 第四區：文件與常見問題 -->
+    <div class="card">
+        <span class="card-title">📝 文件申請與QA</span>
+        <a href="https://www.cgmh.org.tw/tw/Guide/Info/5" target="_blank" class="btn btn-normal">
+            📄 診斷書/病歷複製申請
+        </a>
+        <a href="https://cghdpt.cgmh.org.tw/dept/29201/m/6295/page/13114" target="_blank" class="btn btn-normal">
+            💉 抽血檢驗流程及時間
+        </a>
+        <a href="https://www.cgmh.org.tw/tw/Guide/Qa" target="_blank" class="btn btn-normal">
+            ❓ 常見問題 Q&A
+        </a>
+    </div>
+
+    <div class="footer">
+        基隆長庚腫瘤個案管理師<br>
+        林佩諭關心您
+    </div>
+</div>
+
+</body>
+</html>
